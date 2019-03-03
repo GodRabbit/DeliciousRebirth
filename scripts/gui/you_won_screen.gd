@@ -15,7 +15,7 @@ func update_gui():
 	$main/deaths_label.set_text(str(global_data.get_deaths()))
 	
 	reset_kitties()
-	for i in range(0, global_data.get_golden_kitties()):
+	for i in range(0, int(min(3, global_data.get_golden_kitties()))): # global_data.get_golden_kitties()
 		get_node("main/golden_kitty_container/kitty"+str(i+1)).show()
 
 func hide():

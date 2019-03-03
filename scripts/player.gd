@@ -66,6 +66,8 @@ func _input(event):
 	if(event.is_action_pressed("debug_hurt")):
 		#add_mp(-10)
 		add_kitten()
+	elif(event.is_action_pressed("debug_golden")):
+		global_data.add_golden_kitten()
 
 func reset_jump():
 	jumping_pressed = false
