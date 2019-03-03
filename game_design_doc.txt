@@ -27,24 +27,24 @@ trying to improve as you get better at jumping\not dying, and try to abuse the d
 ** kitten animations [done!!]
 ** level design [done!!]
 ** basic sfx [done?]
-** tutorial
+** tutorial [done]
 ** end-game conditions [done]
 ** end game screen [done]
 ** main menu [done]
 ** death counter [done]
 ** press r to restart [done]
-** licensing
-** setup on github
+** licensing [done]
+** setup on github [done]
 
 
 polish:
 ** best-times table [deprecated?]
 ** better kitty sound effect
 ** better gui
-** other background layout graphic
+** other background layout graphic [done]
 ** actual player idle animations
 ** different player animation in day
-** extra hard-to-get golden kitten[s]
+** extra hard-to-get golden kitten[s] [done]
 ** score?
 ** game music
 ** more houses? more variance in houses
