@@ -1,0 +1,174 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://scripts/gui/main_manu.gd" type="Script" id=1]
+[ext_resource path="res://images/day_background.png" type="Texture" id=2]
+[ext_resource path="res://images/house2.png" type="Texture" id=3]
+[ext_resource path="res://images/chimney1.png" type="Texture" id=4]
+[ext_resource path="res://images/iron_fence1.png" type="Texture" id=5]
+[ext_resource path="res://images/antena1.png" type="Texture" id=6]
+[ext_resource path="res://images/body_full.png" type="Texture" id=7]
+[ext_resource path="res://images/moon.png" type="Texture" id=8]
+[ext_resource path="res://images/gui/menu_back.png" type="Texture" id=9]
+[ext_resource path="res://images/gui/delicous_rebirth_logo.png" type="Texture" id=10]
+[ext_resource path="res://images/gui/button_new_game.png" type="Texture" id=11]
+[ext_resource path="res://images/gui/button_tutorial.png" type="Texture" id=12]
+[ext_resource path="res://images/gui/button_exit.png" type="Texture" id=13]
+
+[node name="main_manu" type="Node2D"]
+
+modulate = Color( 0.972656, 0.9433, 0.80928, 1 )
+position = Vector2( 32, 32 )
+script = ExtResource( 1 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="background" type="Sprite" parent="." index="0"]
+
+position = Vector2( 480, 68 )
+texture = ExtResource( 2 )
+_sections_unfolded = [ "Visibility" ]
+
+[node name="house" type="Sprite" parent="background" index="0"]
+
+modulate = Color( 0.3088, 0.307617, 0.3125, 1 )
+position = Vector2( -400, 504 )
+texture = ExtResource( 3 )
+_sections_unfolded = [ "Material", "Visibility" ]
+
+[node name="chimney" type="Sprite" parent="background/house" index="0"]
+
+show_behind_parent = true
+position = Vector2( 284, -348 )
+texture = ExtResource( 4 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="pole1" type="Sprite" parent="background/house" index="1"]
+
+show_behind_parent = true
+position = Vector2( 204, -320 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="pole2" type="Sprite" parent="background/house" index="2"]
+
+show_behind_parent = true
+position = Vector2( 164, -296 )
+texture = ExtResource( 5 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="pole3" type="Sprite" parent="background/house" index="3"]
+
+show_behind_parent = true
+position = Vector2( -36, -336 )
+texture = ExtResource( 6 )
+_sections_unfolded = [ "Transform", "Visibility" ]
+
+[node name="player" type="Sprite" parent="background/house" index="4"]
+
+visible = false
+position = Vector2( -32, -388 )
+texture = ExtResource( 7 )
+
+[node name="sun" type="Sprite" parent="background" index="1"]
+
+position = Vector2( 36, -8 )
+texture = ExtResource( 8 )
+
+[node name="menu_panel" type="Sprite" parent="." index="1"]
+
+position = Vector2( 280, 288 )
+texture = ExtResource( 9 )
+
+[node name="logo" type="Sprite" parent="." index="2"]
+
+position = Vector2( 280, 72 )
+texture = ExtResource( 10 )
+
+[node name="button_container" type="VBoxContainer" parent="." index="3"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 104.0
+margin_top = 216.0
+margin_right = 458.0
+margin_bottom = 458.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 1
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+custom_constants/separation = 25
+alignment = 0
+_sections_unfolded = [ "custom_constants" ]
+
+[node name="button_new_game" type="TextureButton" parent="button_container" index="0"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_right = 354.0
+margin_bottom = 64.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 11 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="button_tutorial" type="TextureButton" parent="button_container" index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 89.0
+margin_right = 354.0
+margin_bottom = 153.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 12 )
+_sections_unfolded = [ "Textures" ]
+
+[node name="button_exit" type="TextureButton" parent="button_container" index="2"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_top = 178.0
+margin_right = 354.0
+margin_bottom = 242.0
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+focus_mode = 2
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+toggle_mode = false
+enabled_focus_mode = 2
+shortcut = null
+group = null
+texture_normal = ExtResource( 13 )
+_sections_unfolded = [ "Textures" ]
+
+

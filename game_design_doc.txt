@@ -1,0 +1,50 @@
+CYCLES
+
+seasons, evolution, change, circle, repetition, day-night
+BiCycle
+
+Ice Cream Warrior
+go through 3 cycles:
+IceCream, melting icecream, only the cone
+
+You are a floating jumping ice cream, you need to collect all the happy-beans!!
+as the day pass by, night and day shifts and you need to watch out as you melt, when you are melted away or died you teleport back to the start [as a fresh ice cream!]
+watch out for the melting meter
+Dying won't restart the day cycle
+there's a timer
+You can't lose this game
+the game ends when you collect all the beans
+you need to try to get the best time you can
+[ you should be able to finish the game in about 10 minutes the first time]
+
+There are hot surfaces which melts you quicker
+
+As you are melting you get shorter, making it possible to pass through areas you couldn't pass before
+trying to improve as you get better at jumping\not dying, and try to abuse the day-night cycle for your winning condition
+
+# todo list:
+** obstecales [done!!]
+** kitten animations [done!!]
+** level design [done!!]
+** basic sfx [done?]
+** tutorial
+** end-game conditions [done]
+** end game screen [done]
+** main menu [done]
+** death counter [done]
+** press r to restart [done]
+** licensing
+** setup on github
+
+
+polish:
+** best-times table [deprecated?]
+** better kitty sound effect
+** better gui
+** other background layout graphic
+** actual player idle animations
+** different player animation in day
+** extra hard-to-get golden kitten[s]
+** score?
+** game music
+** more houses? more variance in houses

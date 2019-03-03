@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://scripts/roof_top.gd" type="Script" id=1]
+[ext_resource path="res://images/house1.png" type="Texture" id=2]
+
+[node name="roof_top" type="StaticBody2D"]
+
+position = Vector2( 30, 30 )
+input_pickable = false
+collision_layer = 1
+collision_mask = 1
+constant_linear_velocity = Vector2( 0, 0 )
+constant_angular_velocity = 0.0
+friction = 0.0
+bounce = 0.0
+script = ExtResource( 1 )
+_sections_unfolded = [ "Collision", "Pickable" ]
+house_id = 1
+
+[node name="sprite" type="Sprite" parent="." index="0"]
+
+position = Vector2( 380, 340 )
+scale = Vector2( 1, 1.15075 )
+texture = ExtResource( 2 )
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="." index="1"]
+
+visible = false
+build_mode = 0
+polygon = PoolVector2Array( 30, -30, 730, -30, 730, 20, 790, 140, 800, 170, -40, 170, -30, 130, 30, 20 )
+
+
