@@ -1,13 +1,14 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://scripts/gui/hud.gd" type="Script" id=1]
-[ext_resource path="res://images/gui/mp_empty.png" type="Texture" id=2]
-[ext_resource path="res://images/gui/mp_full.png" type="Texture" id=3]
-[ext_resource path="res://images/gui/hppy_cat_icon.png" type="Texture" id=4]
-[ext_resource path="res://themes/gui_labels.tres" type="Theme" id=5]
-[ext_resource path="res://images/gui/night_label.png" type="Texture" id=6]
+[ext_resource path="res://images/gui/night_label.png" type="Texture" id=2]
+[ext_resource path="res://images/gui/mp_empty.png" type="Texture" id=3]
+[ext_resource path="res://images/gui/mp_full.png" type="Texture" id=4]
+[ext_resource path="res://images/gui/mp_label.png" type="Texture" id=5]
+[ext_resource path="res://images/gui/kitten_house.png" type="Texture" id=6]
+[ext_resource path="res://themes/gui_labels.tres" type="Theme" id=7]
 
-[node name="hud" type="CanvasLayer"]
+[node name="hud" type="CanvasLayer" index="0"]
 
 layer = 1
 offset = Vector2( 0, 0 )
@@ -16,7 +17,31 @@ scale = Vector2( 1, 1 )
 transform = Transform2D( 1, 0, 0, 1, 0, 0 )
 script = ExtResource( 1 )
 
-[node name="mp_progress" type="TextureProgress" parent="." index="0"]
+[node name="time_of_day_label" type="Sprite" parent="." index="0"]
+
+position = Vector2( 568, 600 )
+scale = Vector2( 0.244032, 0.185366 )
+texture = ExtResource( 2 )
+
+[node name="top_control" type="Control" parent="." index="1"]
+
+anchor_left = 0.0
+anchor_top = 0.0
+anchor_right = 0.0
+anchor_bottom = 0.0
+margin_left = 70.0
+margin_right = 110.0
+margin_bottom = 40.0
+rect_scale = Vector2( 0.7, 0.7 )
+rect_pivot_offset = Vector2( 0, 0 )
+rect_clip_content = false
+mouse_filter = 0
+mouse_default_cursor_shape = 0
+size_flags_horizontal = 1
+size_flags_vertical = 1
+_sections_unfolded = [ "Rect" ]
+
+[node name="mp_progress" type="TextureProgress" parent="top_control" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -39,42 +64,30 @@ page = 0.0
 value = 75.0
 exp_edit = false
 rounded = false
-texture_under = ExtResource( 2 )
+texture_under = ExtResource( 3 )
 texture_over = null
-texture_progress = ExtResource( 3 )
+texture_progress = ExtResource( 4 )
 radial_fill_degrees = 360.0
 radial_center_offset = Vector2( 0, 0 )
 nine_patch_stretch = false
 _sections_unfolded = [ "Textures" ]
 
-[node name="Label" type="Label" parent="mp_progress" index="0"]
+[node name="Sprite" type="Sprite" parent="top_control/mp_progress" index="0"]
+
+position = Vector2( -42, 16 )
+scale = Vector2( 0.379679, 0.457447 )
+texture = ExtResource( 5 )
+
+[node name="main_container" type="HBoxContainer" parent="top_control" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_right = 40.0
-margin_bottom = 14.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
-[node name="main_container" type="HBoxContainer" parent="." index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_left = 344.0
-margin_top = 8.0
-margin_right = 624.0
-margin_bottom = 72.0
+margin_left = 400.0
+margin_top = 14.0
+margin_right = 754.0
+margin_bottom = 80.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
@@ -85,90 +98,68 @@ custom_constants/separation = 20
 alignment = 1
 _sections_unfolded = [ "Anchor", "custom_constants" ]
 
-[node name="happy_cats_container" type="HBoxContainer" parent="main_container" index="0"]
+[node name="cat_container" type="TextureRect" parent="top_control/main_container" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 7.0
-margin_right = 143.0
-margin_bottom = 64.0
+margin_right = 224.0
+margin_bottom = 66.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 1
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
-alignment = 0
-
-[node name="TextureRect" type="TextureRect" parent="main_container/happy_cats_container" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 63.0
-margin_bottom = 64.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 1
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-texture = ExtResource( 4 )
+texture = ExtResource( 6 )
 stretch_mode = 0
+_sections_unfolded = [ "Rect" ]
 
-[node name="happy_cats_label" type="Label" parent="main_container/happy_cats_container" index="1"]
+[node name="happy_cats_label" type="Label" parent="top_control/main_container/cat_container" index="0"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 67.0
-margin_top = 9.0
-margin_right = 136.0
-margin_bottom = 54.0
+margin_left = 100.0
+margin_top = 12.0
+margin_right = 169.0
+margin_bottom = 57.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-theme = ExtResource( 5 )
+theme = ExtResource( 7 )
 text = "0 / 7"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Theme" ]
 
-[node name="timer_label" type="Label" parent="main_container" index="1"]
+[node name="timer_label" type="Label" parent="top_control/main_container" index="1"]
 
 anchor_left = 0.0
 anchor_top = 0.0
 anchor_right = 0.0
 anchor_bottom = 0.0
-margin_left = 163.0
-margin_top = 9.0
-margin_right = 273.0
-margin_bottom = 54.0
+margin_left = 244.0
+margin_top = 10.0
+margin_right = 354.0
+margin_bottom = 55.0
 rect_pivot_offset = Vector2( 0, 0 )
 rect_clip_content = false
 mouse_filter = 2
 mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 4
-theme = ExtResource( 5 )
+theme = ExtResource( 7 )
 text = "00:12.6"
 percent_visible = 1.0
 lines_skipped = 0
 max_lines_visible = -1
 _sections_unfolded = [ "Theme" ]
-
-[node name="time_of_day_label" type="Sprite" parent="." index="2"]
-
-position = Vector2( 568, 600 )
-scale = Vector2( 0.244032, 0.185366 )
-texture = ExtResource( 6 )
 
 

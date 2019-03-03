@@ -15,10 +15,10 @@
 [ext_resource path="res://scenes/obstacles/chimney.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/obstacles/street_lamp.tscn" type="PackedScene" id=14]
 [ext_resource path="res://scenes/obstacles/platform.tscn" type="PackedScene" id=15]
-[ext_resource path="res://scenes/obstacles/fence_pole.tscn" type="PackedScene" id=16]
-[ext_resource path="res://scenes/obstacles/flame_ball.tscn" type="PackedScene" id=17]
-[ext_resource path="res://scenes/obstacles/high_chimney.tscn" type="PackedScene" id=18]
-[ext_resource path="res://scenes/obstacles/vanish_platform.tscn" type="PackedScene" id=19]
+[ext_resource path="res://scenes/obstacles/vanish_platform.tscn" type="PackedScene" id=16]
+[ext_resource path="res://scenes/obstacles/fence_pole.tscn" type="PackedScene" id=17]
+[ext_resource path="res://scenes/obstacles/flame_ball.tscn" type="PackedScene" id=18]
+[ext_resource path="res://scenes/obstacles/high_chimney.tscn" type="PackedScene" id=19]
 [ext_resource path="res://scenes/roof_top.tscn" type="PackedScene" id=20]
 [ext_resource path="res://scenes/happy_kitten.tscn" type="PackedScene" id=21]
 [ext_resource path="res://scenes/golden_kitten.tscn" type="PackedScene" id=22]
@@ -180,7 +180,7 @@ tracks/1/keys = {
 } ]
 }
 
-[node name="main_scene" type="Node2D" index="0"]
+[node name="main_scene" type="Node2D"]
 
 pause_mode = 2
 modulate = Color( 0.980601, 0.951054, 0.792143, 1 )
@@ -212,7 +212,13 @@ position = Vector2( 4190, -630 )
 scale = Vector2( 1.73862, 1 )
 texture = ExtResource( 3 )
 
-[node name="back_city" type="Node2D" parent="." index="4"]
+[node name="higher_skies2" type="Sprite" parent="." index="4"]
+
+position = Vector2( 1790, -560 )
+scale = Vector2( 1.73862, 1 )
+texture = ExtResource( 3 )
+
+[node name="back_city" type="Node2D" parent="." index="5"]
 
 editor/display_folded = true
 
@@ -377,7 +383,7 @@ texture = ExtResource( 10 )
 position = Vector2( 6680, 990 )
 texture = ExtResource( 10 )
 
-[node name="roads" type="Node2D" parent="." index="5"]
+[node name="roads" type="Node2D" parent="." index="6"]
 
 pause_mode = 1
 editor/display_folded = true
@@ -404,7 +410,7 @@ position = Vector2( 3840, 1370 )
 
 position = Vector2( 5110, 1370 )
 
-[node name="insta_death_platforms" type="Node2D" parent="." index="6"]
+[node name="insta_death_platforms" type="Node2D" parent="." index="7"]
 
 pause_mode = 1
 editor/display_folded = true
@@ -431,10 +437,9 @@ position = Vector2( 3880, 760 )
 
 position = Vector2( 4800, 760 )
 
-[node name="obstacles" type="Node2D" parent="." index="7"]
+[node name="obstacles" type="Node2D" parent="." index="8"]
 
 pause_mode = 1
-editor/display_folded = true
 _sections_unfolded = [ "Pause" ]
 
 [node name="chimney" parent="obstacles" index="0" instance=ExtResource( 13 )]
@@ -488,15 +493,35 @@ position = Vector2( 4252, 192 )
 
 position = Vector2( -2, 128 )
 
-[node name="platform6" parent="obstacles" index="8" instance=ExtResource( 15 )]
+[node name="platform10" parent="obstacles" index="8" instance=ExtResource( 15 )]
+
+position = Vector2( 2420, 60 )
+
+[node name="vanish_platform" parent="obstacles/platform10" index="2" instance=ExtResource( 16 )]
+
+position = Vector2( 0, 130 )
+
+[node name="platform11" parent="obstacles" index="9" instance=ExtResource( 15 )]
+
+position = Vector2( 2150, 60 )
+
+[node name="platform8" parent="obstacles/platform11" index="2" instance=ExtResource( 15 )]
+
+position = Vector2( 0, 140 )
+
+[node name="platform6" parent="obstacles" index="10" instance=ExtResource( 15 )]
 
 position = Vector2( 3980, 370 )
 
-[node name="platform7" parent="obstacles" index="9" instance=ExtResource( 15 )]
+[node name="platform8" parent="obstacles" index="11" instance=ExtResource( 15 )]
+
+position = Vector2( 1770, 130 )
+
+[node name="platform7" parent="obstacles" index="12" instance=ExtResource( 15 )]
 
 position = Vector2( 4520, 660 )
 
-[node name="platform5" parent="obstacles" index="10" instance=ExtResource( 15 )]
+[node name="platform5" parent="obstacles" index="13" instance=ExtResource( 15 )]
 
 position = Vector2( 3480, 790 )
 
@@ -510,20 +535,20 @@ playback_speed = 1.0
 anims/left_right = SubResource( 2 )
 blend_times = [  ]
 
-[node name="fence_pole" parent="obstacles" index="11" instance=ExtResource( 16 )]
+[node name="fence_pole" parent="obstacles" index="14" instance=ExtResource( 17 )]
 
 position = Vector2( 630, 570 )
 
-[node name="fence_pole2" parent="obstacles" index="12" instance=ExtResource( 16 )]
+[node name="fence_pole2" parent="obstacles" index="15" instance=ExtResource( 17 )]
 
 position = Vector2( 2380, 620 )
 
-[node name="fence_pole_fireball" parent="obstacles" index="13" instance=ExtResource( 16 )]
+[node name="fence_pole_fireball" parent="obstacles" index="16" instance=ExtResource( 17 )]
 
 position = Vector2( 4310, 620 )
 _sections_unfolded = [ "Transform" ]
 
-[node name="flame_ball4" parent="obstacles/fence_pole_fireball" index="2" instance=ExtResource( 17 )]
+[node name="flame_ball4" parent="obstacles/fence_pole_fireball" index="2" instance=ExtResource( 18 )]
 
 position = Vector2( -40, -260 )
 
@@ -537,12 +562,12 @@ playback_speed = 1.0
 anims/left_right = SubResource( 3 )
 blend_times = [  ]
 
-[node name="fence_pole_fireball2" parent="obstacles" index="14" instance=ExtResource( 16 )]
+[node name="fence_pole_fireball2" parent="obstacles" index="17" instance=ExtResource( 17 )]
 
 editor/display_folded = true
 position = Vector2( 5400, 620 )
 
-[node name="flame_ball4" parent="obstacles/fence_pole_fireball2" index="2" instance=ExtResource( 17 )]
+[node name="flame_ball4" parent="obstacles/fence_pole_fireball2" index="2" instance=ExtResource( 18 )]
 
 position = Vector2( -40, -260 )
 
@@ -556,12 +581,12 @@ playback_speed = 1.0
 anims/left_right = SubResource( 4 )
 blend_times = [  ]
 
-[node name="fence_pole_fireball3" parent="obstacles" index="15" instance=ExtResource( 16 )]
+[node name="fence_pole_fireball3" parent="obstacles" index="18" instance=ExtResource( 17 )]
 
 editor/display_folded = true
 position = Vector2( 4890, 620 )
 
-[node name="flame_ball4" parent="obstacles/fence_pole_fireball3" index="2" instance=ExtResource( 17 )]
+[node name="flame_ball4" parent="obstacles/fence_pole_fireball3" index="2" instance=ExtResource( 18 )]
 
 position = Vector2( -40, -260 )
 
@@ -575,60 +600,61 @@ playback_speed = 1.0
 anims/right_left = SubResource( 5 )
 blend_times = [  ]
 
-[node name="fence_pole3" parent="obstacles" index="16" instance=ExtResource( 16 )]
+[node name="fence_pole3" parent="obstacles" index="19" instance=ExtResource( 17 )]
 
 position = Vector2( 2510, 540 )
 
-[node name="high_chimney" parent="obstacles" index="17" instance=ExtResource( 18 )]
+[node name="high_chimney" parent="obstacles" index="20" instance=ExtResource( 19 )]
 
 position = Vector2( 310, 290 )
 
-[node name="high_chimney2" parent="obstacles" index="18" instance=ExtResource( 18 )]
+[node name="high_chimney2" parent="obstacles" index="21" instance=ExtResource( 19 )]
 
 position = Vector2( 5470, 330 )
 
-[node name="flame_ball" parent="obstacles" index="19" instance=ExtResource( 17 )]
+[node name="flame_ball" parent="obstacles" index="22" instance=ExtResource( 18 )]
 
 position = Vector2( 2340, 360 )
 
-[node name="flame_ball4" parent="obstacles" index="20" instance=ExtResource( 17 )]
+[node name="flame_ball4" parent="obstacles" index="23" instance=ExtResource( 18 )]
 
 position = Vector2( 2150, 580 )
 
-[node name="flame_ball2" parent="obstacles" index="21" instance=ExtResource( 17 )]
+[node name="flame_ball2" parent="obstacles" index="24" instance=ExtResource( 18 )]
 
 position = Vector2( 3400, 140 )
 
-[node name="flame_ball3" parent="obstacles" index="22" instance=ExtResource( 17 )]
+[node name="flame_ball3" parent="obstacles" index="25" instance=ExtResource( 18 )]
 
 position = Vector2( 3780, 560 )
 
-[node name="vanish_platform" parent="obstacles" index="23" instance=ExtResource( 19 )]
+[node name="vanish_platform" parent="obstacles" index="26" instance=ExtResource( 16 )]
 
 position = Vector2( 1160, 470 )
 
-[node name="vanish_platform2" parent="obstacles" index="24" instance=ExtResource( 19 )]
+[node name="vanish_platform2" parent="obstacles" index="27" instance=ExtResource( 16 )]
 
 position = Vector2( 2850, 490 )
 
-[node name="vanish_platform5" parent="obstacles" index="25" instance=ExtResource( 19 )]
+[node name="vanish_platform5" parent="obstacles" index="28" instance=ExtResource( 16 )]
 
 position = Vector2( 3750, 400 )
 
-[node name="vanish_platform6" parent="obstacles" index="26" instance=ExtResource( 19 )]
+[node name="vanish_platform6" parent="obstacles" index="29" instance=ExtResource( 16 )]
 
 position = Vector2( 3510, 280 )
 
-[node name="vanish_platform7" parent="obstacles" index="27" instance=ExtResource( 19 )]
+[node name="vanish_platform7" parent="obstacles" index="30" instance=ExtResource( 16 )]
 
 position = Vector2( 4510, 300 )
 
-[node name="vanish_platform8" parent="obstacles" index="28" instance=ExtResource( 19 )]
+[node name="vanish_platform8" parent="obstacles" index="31" instance=ExtResource( 16 )]
 
 position = Vector2( 4710, 590 )
 
-[node name="vanish_platform3" parent="obstacles" index="29" instance=ExtResource( 19 )]
+[node name="vanish_platform3" parent="obstacles" index="32" instance=ExtResource( 16 )]
 
+editor/display_folded = true
 position = Vector2( 3305.01, 392.135 )
 
 [node name="anim" type="AnimationPlayer" parent="obstacles/vanish_platform3" index="5"]
@@ -641,47 +667,47 @@ playback_speed = 1.0
 anims/up_and_down = SubResource( 6 )
 blend_times = [  ]
 
-[node name="vanish_platform_pole" parent="obstacles" index="30" instance=ExtResource( 19 )]
+[node name="vanish_platform_pole" parent="obstacles" index="33" instance=ExtResource( 16 )]
 
 editor/display_folded = true
 show_behind_parent = true
 position = Vector2( 2610, 410 )
 _sections_unfolded = [ "Visibility" ]
 
-[node name="fence_pole3" parent="obstacles/vanish_platform_pole" index="5" instance=ExtResource( 16 )]
+[node name="fence_pole3" parent="obstacles/vanish_platform_pole" index="5" instance=ExtResource( 17 )]
 
 show_behind_parent = true
 position = Vector2( 50, -120 )
 _sections_unfolded = [ "Material", "Visibility" ]
 
-[node name="roof_top" parent="." index="8" instance=ExtResource( 20 )]
+[node name="roof_top" parent="." index="9" instance=ExtResource( 20 )]
 
 pause_mode = 1
 position = Vector2( 240, 670 )
 _sections_unfolded = [ "Collision", "Pause", "Pickable" ]
 
-[node name="roof_top2" parent="." index="9" instance=ExtResource( 20 )]
+[node name="roof_top2" parent="." index="10" instance=ExtResource( 20 )]
 
 pause_mode = 1
 position = Vector2( 1860, 670 )
 _sections_unfolded = [ "Collision", "Pause", "Pickable" ]
 house_id = 2
 
-[node name="roof_top3" parent="." index="10" instance=ExtResource( 20 )]
+[node name="roof_top3" parent="." index="11" instance=ExtResource( 20 )]
 
 pause_mode = 1
 position = Vector2( 3590, 660 )
 _sections_unfolded = [ "Collision", "Pause", "Pickable" ]
 house_id = 3
 
-[node name="roof_top4" parent="." index="11" instance=ExtResource( 20 )]
+[node name="roof_top4" parent="." index="12" instance=ExtResource( 20 )]
 
 pause_mode = 1
 position = Vector2( 4820, 660 )
 _sections_unfolded = [ "Collision", "Pause", "Pickable" ]
 house_id = 2
 
-[node name="kittens" type="Node2D" parent="." index="12"]
+[node name="kittens" type="Node2D" parent="." index="13"]
 
 pause_mode = 1
 _sections_unfolded = [ "Pause" ]
@@ -722,13 +748,17 @@ position = Vector2( 4280, -120 )
 
 position = Vector2( 4750, 1310 )
 
-[node name="player" parent="." index="13" instance=ExtResource( 23 )]
+[node name="golden_kitten3" parent="kittens" index="9" instance=ExtResource( 22 )]
+
+position = Vector2( 1800, -180 )
+
+[node name="player" parent="." index="14" instance=ExtResource( 23 )]
 
 pause_mode = 1
 position = Vector2( 390, 490 )
 _sections_unfolded = [ "Angular", "Collision", "Linear", "Pause", "Pickable", "Transform", "Visibility", "collision" ]
 
-[node name="anim" type="AnimationPlayer" parent="." index="14"]
+[node name="anim" type="AnimationPlayer" parent="." index="15"]
 
 pause_mode = 1
 root_node = NodePath("..")
@@ -740,12 +770,12 @@ anims/day_night_cycle = SubResource( 7 )
 blend_times = [  ]
 _sections_unfolded = [ "Pause" ]
 
-[node name="game_menu" parent="." index="15" instance=ExtResource( 24 )]
+[node name="game_menu" parent="." index="16" instance=ExtResource( 24 )]
 
 pause_mode = 2
 _sections_unfolded = [ "Pause" ]
 
-[node name="you_won_screen" parent="." index="16" instance=ExtResource( 25 )]
+[node name="you_won_screen" parent="." index="17" instance=ExtResource( 25 )]
 
 pause_mode = 2
 _sections_unfolded = [ "Pause" ]

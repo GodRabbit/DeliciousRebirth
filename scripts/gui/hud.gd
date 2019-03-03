@@ -1,9 +1,9 @@
 extends CanvasLayer
 
 # nodes:
-onready var mp_progress = $mp_progress
-onready var timer_label = $main_container/timer_label
-onready var happy_cats_label = $main_container/happy_cats_container/happy_cats_label
+onready var mp_progress = $top_control/mp_progress
+onready var timer_label = $top_control/main_container/timer_label
+onready var happy_cats_label = $top_control/main_container/cat_container/happy_cats_label
 onready var time_of_day_label = $time_of_day_label
 
 var player
