@@ -79,11 +79,13 @@ func _ready():
 	update_state()
 
 func _input(event):
-	if(event.is_action_pressed("debug_hurt")):
+	if(event.is_action_pressed("debug_hurt")): # debugg only!!!
 		#add_mp(-10)
-		add_kitten()
-	elif(event.is_action_pressed("debug_golden")):
-		global_data.add_golden_kitten()
+		#add_kitten()
+		pass
+	elif(event.is_action_pressed("debug_golden")): # debugg only!!!
+		#global_data.add_golden_kitten()
+		pass
 
 func reset_jump():
 	jumping_pressed = false

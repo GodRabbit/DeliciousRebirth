@@ -23,6 +23,7 @@ global_transition="*res://scenes/gui/global_transition.tscn"
 
 window/size/width=640
 window/size/height=640
+window/size/resizable=false
 
 [input]
 
